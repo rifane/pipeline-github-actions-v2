@@ -55,12 +55,19 @@ resource "azurerm_linux_virtual_machine" "vm" {
     storage_account_type = "Standard_LRS"
   }
 
+  # source_image_reference {
+  #   publisher = "canonical"
+  #   # offer     = "UbuntuServer"
+  #   offer   = "0001-com-ubuntu-server-jammy"
+  #   sku     = "22.04-lts"
+  #   version = "latest"
+  # }
+
   source_image_reference {
-    publisher = "canonical"
-    # offer     = "UbuntuServer"
-    offer   = "0001-com-ubuntu-server-jammy"
-    sku     = "22.04-lts"
-    version = "latest"
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts-gen2"
+    version   = "22.04.202504250"
   }
 
   tags = local.common_tags
